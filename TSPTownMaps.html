@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+	<head>
+		<title> Travelling Salesman Problem Town Map Plotter </title>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		<script src= "readtowns.js"></script>
+	
+		<style>
+		html, body, #map-canvas {
+			margin: 0px;
+			padding: 0px
+		}
+		
+		#fileDisplayArea{
+			width: 33%;
+		}
+		
+		#townInput{
+			width: 33%;
+			display: none;
+		}
+		
+		.column-left{ float: left; width: 33%; }
+		.column-right{ float: right; width: 33%; }
+		.column-center{ display: inline-block; width: 33%; }
+		</style>
+
+	</head>
+
+	<body>
+		<h1>Travelling Salesman Problem Town Map Plotter for Java Programme</h1>
+		
+		<div>
+		Select a text file that contains the towns: 
+		<input type="file" id="fileInput">
+		</div>
+
+		<br/>
+		<div id="townInput" class="column-left">
+				<p>Enter towns in form 1.2.3.4 etc with no full stop at the end, also press clear button to reset map-lines and text box</p>
+				<input type='text' name='route' id='routeText' style='width:500px;height:200px;'><br/>
+				<button type='submit' onclick='plotRoute()'>submit</button> <button type='clear' onclick='reInit()'>clear</button>
+		</div>
+		
+		<div id="map-canvas" style="width:500px;height:800px;" class="column-center">
+		</div>
+		
+		<div id="fileDisplayArea" class="column-right">
+		</div>
+	</body>	
+
+</html>
